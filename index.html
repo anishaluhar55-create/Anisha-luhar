@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anisha Luhar — Student & Aspiring Developer from Nepal</title>
+    <meta name="description" content="Personal portfolio and CV of Anisha Luhar, a student from Nepal studying computer science and building web applications." />
+    <meta property="og:title" content="Anisha Luhar — Personal Portfolio" />
+    <meta property="og:description" content="Student & Aspiring Developer from Nepal crafting modern web projects." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Plus Jakarta Sans', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            colors: {
+              azure: {
+                50: '#f0f9ff',
+                100: '#e0f2fe',
+                200: '#bae6fd',
+                300: '#7dd3fc',
+                400: '#38bdf8',
+                500: '#0ea5e9',
+                600: '#0284c7',
+                700: '#0369a1',
+                800: '#075985',
+                900: '#0c4a6e',
+                950: '#082f49',
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased transition-colors duration-300">
+
+    <!-- Top Navigation Bar (3-zone contract) -->
+    <header class="sticky top-0 z-40 bg-white/85 dark:bg-slate-900/85 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors">
+      <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-8">
+        <!-- Zone 1: Brand Wordmark -->
+        <a href="#" class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white whitespace-nowrap shrink-0 flex items-center gap-2">
+          <span class="w-8 h-8 rounded-lg bg-sky-600 text-white flex items-center justify-center font-mono text-sm shadow-sm shadow-sky-500/20">AL</span>
+          <span>Anisha Luhar</span>
+        </a>
+
+        <!-- Zone 2: Navigation Links -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600 dark:text-slate-300">
+          <a href="#about" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors whitespace-nowrap shrink-0">About</a>
+          <a href="#projects" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors whitespace-nowrap shrink-0">Projects</a>
+          <a href="#education" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors whitespace-nowrap shrink-0">Education</a>
+          <a href="#contact" class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors whitespace-nowrap shrink-0">Contact</a>
+        </nav>
+
+        <!-- Zone 3: Primary Action & Theme Toggle -->
+        <div class="flex items-center gap-4 shrink-0">
+          <button id="themeToggle" aria-label="Toggle theme" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors shadow-sm">
+            <!-- Sun Icon -->
+            <svg id="sunIcon" class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+            <!-- Moon Icon -->
+            <svg id="moonIcon" class="w-4 h-4 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg>
+          </button>
+          
+          <a href="#contact" class="hidden sm:inline-flex px-5 py-2.5 text-xs font-semibold text-white bg-sky-600 rounded-xl hover:bg-sky-500 transition-all shadow-sm shadow-sky-500/25 whitespace-nowrap">
+            Get in Touch
+          </a>
+
+          <!-- Mobile Menu Button -->
+          <button id="menuBtn" class="md:hidden p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobileMenu" class="hidden md:hidden px-6 pb-6 pt-2 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 space-y-3">
+        <a href="#about" class="block py-2 text-sm font-medium text-slate-700 dark:text-slate-200">About</a>
+        <a href="#projects" class="block py-2 text-sm font-medium text-slate-700 dark:text-slate-200">Projects</a>
+        <a href="#education" class="block py-2 text-sm font-medium text-slate-700 dark:text-slate-200">Education</a>
+        <a href="#contact" class="block py-2 text-sm font-medium text-slate-700 dark:text-slate-200">Contact</a>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden py-20 lg:py-32 border-b border-slate-200 dark:border-slate-800 bg-gradient-to-b from-sky-50/50 via-transparent to-transparent dark:from-sky-950/20">
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <!-- Left: Text content -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-50 dark:bg-sky-950/60 border border-sky-200 dark:border-sky-800/60 text-sky-700 dark:text-sky-300 text-xs font-semibold">
+            <span class="w-2 h-2 rounded-full bg-sky-600 animate-pulse"></span>
+            Student & Aspiring Developer from Nepal 🇳🇵
+          </div>
+
+          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.1]">
+            Hi, I'm <span class="text-sky-600 dark:text-sky-400">Anisha Luhar</span>. Passionate student learning & building.
+          </h1>
+
+          <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
+            I am a student based in Nepal with a strong interest in technology, web development, and software engineering. I love creating interactive projects, learning new programming skills, and building impactful digital solutions.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="#projects" class="px-7 py-3.5 bg-sky-600 hover:bg-sky-500 text-white font-semibold text-sm rounded-xl shadow-lg shadow-sky-600/25 transition-all">
+              Explore Projects
+            </a>
+            <a href="#contact" class="px-7 py-3.5 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 font-semibold text-sm rounded-xl transition-all">
+              Contact Me
+            </a>
+          </div>
+
+          <!-- Quick stats row -->
+          <div class="grid grid-cols-3 gap-6 pt-8 border-t border-slate-200 dark:border-slate-800 max-w-lg">
+            <div>
+              <p class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white font-mono">Nepal</p>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Based Location</p>
+            </div>
+            <div>
+              <p class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white font-mono">3+</p>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Featured Projects</p>
+            </div>
+            <div>
+              <p class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white font-mono">100%</p>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Dedication</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Hero Image / Visual -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800 bg-slate-900">
+            <img src="/assets/aistudio/IMG_6034_20ee696c.HEIC" alt="Anisha Luhar" class="w-full h-[420px] lg:h-[480px] object-cover hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-6">
+              <div class="text-white space-y-1">
+                <p class="text-xs font-mono uppercase tracking-wider text-sky-400">Student Portfolio</p>
+                <p class="text-sm font-medium">Learning & Building from Nepal</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800 transition-colors">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-3xl mb-16 space-y-4">
+          <p class="text-xs font-mono uppercase tracking-widest text-sky-600 dark:text-sky-400">About Me</p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+            A dedicated student exploring the world of software development.
+          </h2>
+          <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed">
+            Hello! I am Anisha Luhar, currently studying and expanding my knowledge in computer science and modern web technologies. Living and studying in Nepal has inspired me to build solutions that are both practical and creative.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Skill Category 1 -->
+          <div class="p-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 shadow-sm space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-sky-50 dark:bg-sky-950/80 text-sky-600 dark:text-sky-400 flex items-center justify-center font-bold text-lg shadow-sm">
+              💻
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Web Development</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Learning HTML, CSS, JavaScript, and responsive design frameworks to build clean and user-friendly websites.
+            </p>
+            <div class="pt-2 flex flex-wrap gap-2 text-xs text-slate-500 dark:text-slate-400">
+              <span>HTML5</span> · <span>CSS3</span> · <span>JavaScript</span> · <span>Tailwind</span>
+            </div>
+          </div>
+
+          <!-- Skill Category 2 -->
+          <div class="p-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 shadow-sm space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-sky-50 dark:bg-sky-950/80 text-sky-600 dark:text-sky-400 flex items-center justify-center font-bold text-lg shadow-sm">
+              📚
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Continuous Learning</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Actively studying algorithms, data structures, and software engineering principles to strengthen problem-solving capabilities.
+            </p>
+            <div class="pt-2 flex flex-wrap gap-2 text-xs text-slate-500 dark:text-slate-400">
+              <span>Algorithms</span> · <span>Data Structures</span> · <span>Problem Solving</span>
+            </div>
+          </div>
+
+          <!-- Skill Category 3 -->
+          <div class="p-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 shadow-sm space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-sky-50 dark:bg-sky-950/80 text-sky-600 dark:text-sky-400 flex items-center justify-center font-bold text-lg shadow-sm">
+              🌟
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Creative Projects</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Designing and developing sample web applications and personal projects to gain hands-on coding experience.
+            </p>
+            <div class="pt-2 flex flex-wrap gap-2 text-xs text-slate-500 dark:text-slate-400">
+              <span>UI Design</span> · <span>Portfolio Sites</span> · <span>Web Apps</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section (Three sample project cards as requested) -->
+    <section id="projects" class="py-24 border-b border-slate-200 dark:border-slate-800">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div class="space-y-4 max-w-2xl">
+            <p class="text-xs font-mono uppercase tracking-widest text-sky-600 dark:text-sky-400">Featured Projects</p>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+              Sample projects built while learning web development.
+            </h2>
+            <p class="text-slate-600 dark:text-slate-300 text-base">
+              Explore three sample projects showcasing frontend design, interactivity, and modern styling.
+            </p>
+          </div>
+
+          <!-- Filter Tabs -->
+          <div class="flex items-center gap-1 p-1 bg-slate-200/70 dark:bg-slate-800 rounded-xl self-start">
+            <button onclick="filterProjects('all')" class="project-tab px-4 py-2 text-xs font-semibold rounded-lg bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-sm transition-all" data-filter="all">All Projects</button>
+            <button onclick="filterProjects('web')" class="project-tab px-4 py-2 text-xs font-semibold rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all" data-filter="web">Web Apps</button>
+            <button onclick="filterProjects('ui')" class="project-tab px-4 py-2 text-xs font-semibold rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all" data-filter="ui">UI Design</button>
+          </div>
+        </div>
+
+        <!-- 3 Sample Project Cards -->
+        <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- Project 1 -->
+          <div class="project-card group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="web">
+            <div class="relative overflow-hidden aspect-[4/3] bg-slate-100 dark:bg-slate-800">
+              <img src="/src/assets/images/project_nexus_preview_1795254054603.jpg" alt="Student Study Planner" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
+              <div class="absolute top-4 right-4 px-3 py-1 bg-slate-900/80 backdrop-blur-md text-white rounded-full text-xs font-medium">
+                Web App
+              </div>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div class="space-y-2">
+                <div class="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+                  <span>Productivity Tool</span>
+                  <span aria-hidden="true">·</span>
+                  <span>HTML/JS</span>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                  Student Study & Task Planner
+                </h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  An interactive task manager and study scheduler designed to help students organize daily assignments, exams, and revision goals.
+                </p>
+              </div>
+              <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                <span class="text-xs font-mono text-sky-600 dark:text-sky-400">Student Project</span>
+                <button onclick="openModal('Student Study & Task Planner', 'A productivity web application built with HTML, CSS, and JavaScript. It allows students to manage study timetables, track homework deadlines, and check off completed revision tasks with local storage persistence.', ['HTML5', 'Tailwind CSS', 'JavaScript', 'Local Storage'], '/src/assets/images/project_nexus_preview_1795254054603.jpg')" class="inline-flex items-center gap-1.5 text-sm font-semibold text-sky-600 dark:text-sky-400 hover:underline">
+                  View Details
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="web">
+            <div class="relative overflow-hidden aspect-[4/3] bg-slate-100 dark:bg-slate-800">
+              <img src="/src/assets/images/project_aether_preview_1795254054381.jpg" alt="Nepal Tourism Guide" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
+              <div class="absolute top-4 right-4 px-3 py-1 bg-slate-900/80 backdrop-blur-md text-white rounded-full text-xs font-medium">
+                Web App
+              </div>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div class="space-y-2">
+                <div class="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+                  <span>Tourism & Culture</span>
+                  <span aria-hidden="true">·</span>
+                  <span>UI / Frontend</span>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                  Nepal Tourism Explorer
+                </h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  A responsive web guide showcasing breathtaking trekking trails, cultural heritage sites, and scenic destinations across Nepal.
+                </p>
+              </div>
+              <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                <span class="text-xs font-mono text-sky-600 dark:text-sky-400">Featured Guide</span>
+                <button onclick="openModal('Nepal Tourism Explorer', 'A web portal celebrating the beauty and culture of Nepal. It highlights famous destinations like Everest Base Camp, Pokhara lakes, and Kathmandu heritage sites with interactive photo galleries and travel tips.', ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design'], '/src/assets/images/project_aether_preview_1795254054381.jpg')" class="inline-flex items-center gap-1.5 text-sm font-semibold text-sky-600 dark:text-sky-400 hover:underline">
+                  View Details
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="ui">
+            <div class="relative overflow-hidden aspect-[4/3] bg-slate-100 dark:bg-slate-800">
+              <img src="/src/assets/images/project_kinetix_preview_1795254055149.jpg" alt="Campus Event Hub UI" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
+              <div class="absolute top-4 right-4 px-3 py-1 bg-slate-900/80 backdrop-blur-md text-white rounded-full text-xs font-medium">
+                UI Design
+              </div>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div class="space-y-2">
+                <div class="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+                  <span>Community UI</span>
+                  <span aria-hidden="true">·</span>
+                  <span>Figma / Tailwind</span>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                  Campus Event Hub UI
+                </h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  A modern interface concept designed for student clubs and college events to share announcements, workshops, and registrations.
+                </p>
+              </div>
+              <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                <span class="text-xs font-mono text-sky-600 dark:text-sky-400">Design Concept</span>
+                <button onclick="openModal('Campus Event Hub UI', 'A clean user interface design for college students to discover upcoming hackathons, coding workshops, and cultural fests. Built with a focus on accessibility and modern azure blue aesthetics.', ['UI/UX Design', 'Tailwind CSS', 'Interactive Mockup'], '/src/assets/images/project_kinetix_preview_1795254055149.jpg')" class="inline-flex items-center gap-1.5 text-sm font-semibold text-sky-600 dark:text-sky-400 hover:underline">
+                  View Details
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-24 bg-white dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800 transition-colors">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-3xl mb-16 space-y-4">
+          <p class="text-xs font-mono uppercase tracking-widest text-sky-600 dark:text-sky-400">CV & Education</p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+            Educational Background
+          </h2>
+          <p class="text-slate-600 dark:text-slate-300 text-base">
+            Academic studies and continuous learning milestones in computer science.
+          </p>
+        </div>
+
+        <div class="max-w-3xl space-y-6">
+          <div class="p-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 shadow-sm space-y-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white">Computer Science Student</h3>
+              <span class="text-xs font-mono px-3 py-1 bg-sky-50 dark:bg-sky-950 text-sky-600 dark:text-sky-400 rounded-full w-fit">Present</span>
+            </div>
+            <p class="text-sm font-medium text-slate-700 dark:text-slate-300">Nepal · Academic Studies</p>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Currently pursuing computer science education in Nepal, focusing on core programming fundamentals, web development, algorithms, and software engineering principles.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section with Form -->
+    <section id="contact" class="py-24">
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Left info -->
+        <div class="lg:col-span-5 space-y-6">
+          <p class="text-xs font-mono uppercase tracking-widest text-sky-600 dark:text-sky-400">Get in Touch</p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+            Let's connect or collaborate!
+          </h2>
+          <p class="text-slate-600 dark:text-slate-300 text-base leading-relaxed">
+            Have a question, project idea, or want to connect? Send me a message using the form, and I'll get back to you soon.
+          </p>
+
+          <div class="space-y-4 pt-4 text-slate-700 dark:text-slate-300">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-sky-50 dark:bg-sky-950/80 text-sky-600 dark:text-sky-400 flex items-center justify-center font-semibold">
+                ✉
+              </div>
+              <div>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Email Address</p>
+                <p class="text-sm font-semibold text-slate-900 dark:text-white">anishaluhar55@gmail.com</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-sky-50 dark:bg-sky-950/80 text-sky-600 dark:text-sky-400 flex items-center justify-center font-semibold">
+                📍
+              </div>
+              <div>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Location</p>
+                <p class="text-sm font-semibold text-slate-900 dark:text-white">Nepal 🇳🇵</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Form -->
+        <div class="lg:col-span-7 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 sm:p-10 shadow-xl">
+          <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label for="name" class="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">Your Name</label>
+                <input type="text" id="name" required class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-600 transition-all text-sm" placeholder="John Doe" />
+              </div>
+              <div class="space-y-2">
+                <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">Email Address</label>
+                <input type="email" id="email" required class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-600 transition-all text-sm" placeholder="john@example.com" />
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <label for="subject" class="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">Subject</label>
+              <input type="text" id="subject" required class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-600 transition-all text-sm" placeholder="Collaboration / Inquiry" />
+            </div>
+
+            <div class="space-y-2">
+              <label for="message" class="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">Message</label>
+              <textarea id="message" rows="5" required class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-600 transition-all text-sm" placeholder="Write your message here..."></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-4 bg-sky-600 hover:bg-sky-500 text-white font-semibold text-sm rounded-xl shadow-lg shadow-sky-600/25 transition-all">
+              Send Message
+            </button>
+          </form>
+
+          <!-- Success Alert Message (Hidden by default) -->
+          <div id="successAlert" class="hidden mt-6 p-4 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-200 text-sm flex items-center gap-3">
+            <svg class="w-5 h-5 text-emerald-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            <div>
+              <span class="font-semibold">Message sent successfully!</span> Thank you for reaching out to Anisha. She will get back to you soon.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-12 transition-colors">
+      <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6 text-sm text-slate-500 dark:text-slate-400">
+        <p>© 2026 Anisha Luhar. All rights reserved. Student from Nepal 🇳🇵.</p>
+        <div class="flex items-center gap-6">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-slate-900 dark:hover:text-white transition-colors">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            <span>GitHub</span>
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-slate-900 dark:hover:text-white transition-colors">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Project Detail Modal -->
+    <div id="projectModal" class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4">
+      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative space-y-6 max-h-[90vh] overflow-y-auto">
+        <button onclick="closeModal()" aria-label="Close modal" class="absolute top-6 right-6 p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+          ✕
+        </button>
+        
+        <div class="space-y-2">
+          <p class="text-xs font-mono uppercase tracking-wider text-sky-600 dark:text-sky-400">Project Case Study</p>
+          <h3 id="modalTitle" class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white"></h3>
+        </div>
+
+        <div class="rounded-2xl overflow-hidden aspect-video bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-800">
+          <img id="modalImage" src="" alt="Project Preview" class="w-full h-full object-cover" referrerPolicy="no-referrer" />
+        </div>
+
+        <p id="modalDescription" class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed"></p>
+
+        <div class="space-y-3">
+          <p class="text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">Technologies Used</p>
+          <div id="modalTags" class="flex flex-wrap gap-2"></div>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex justify-end gap-3">
+          <button onclick="closeModal()" class="px-6 py-2.5 bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-sm font-semibold rounded-xl transition-all">
+            Close
+          </button>
+          <a href="#contact" onclick="closeModal()" class="px-6 py-2.5 bg-sky-600 hover:bg-sky-500 text-white text-sm font-semibold rounded-xl shadow-md transition-all">
+            Get in Touch
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vanilla JavaScript Functionality -->
+    <script>
+      // Theme Toggle Logic
+      const themeToggleBtn = document.getElementById('themeToggle');
+      const htmlElement = document.documentElement;
+
+      // Check initial system or stored theme preference
+      if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        htmlElement.classList.add('dark');
+      } else {
+        htmlElement.classList.remove('dark');
+      }
+
+      themeToggleBtn.addEventListener('click', () => {
+        if (htmlElement.classList.contains('dark')) {
+          htmlElement.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+        } else {
+          htmlElement.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+        }
+      });
+
+      // Mobile Menu Toggle
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      // Close mobile menu on anchor click
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+
+      // Project Filtering Logic
+      function filterProjects(category) {
+        const tabs = document.querySelectorAll('.project-tab');
+        tabs.forEach(tab => {
+          if (tab.getAttribute('data-filter') === category) {
+            tab.className = 'project-tab px-4 py-2 text-xs font-semibold rounded-lg bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-sm transition-all';
+          } else {
+            tab.className = 'project-tab px-4 py-2 text-xs font-semibold rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all';
+          }
+        });
+
+        const cards = document.querySelectorAll('.project-card');
+        cards.forEach(card => {
+          const cardCategory = card.getAttribute('data-category');
+          if (category === 'all' || cardCategory === category) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+
+      // Project Modal Logic
+      function openModal(title, description, tags, imageUrl) {
+        document.getElementById('modalTitle').textContent = title;
+        document.getElementById('modalDescription').textContent = description;
+        document.getElementById('modalImage').src = imageUrl;
+        
+        const tagsContainer = document.getElementById('modalTags');
+        tagsContainer.innerHTML = '';
+        tags.forEach(tag => {
+          const span = document.createElement('span');
+          span.className = 'px-3 py-1 bg-sky-50 dark:bg-sky-950/80 text-sky-700 dark:text-sky-300 text-xs font-medium rounded-lg border border-sky-200 dark:border-sky-800/50';
+          span.textContent = tag;
+          tagsContainer.appendChild(span);
+        });
+
+        document.getElementById('projectModal').classList.remove('hidden');
+      }
+
+      function closeModal() {
+        document.getElementById('projectModal').classList.add('hidden');
+      }
+
+      // Close modal on background click
+      document.getElementById('projectModal').addEventListener('click', (e) => {
+        if (e.target === document.getElementById('projectModal')) {
+          closeModal();
+        }
+      });
+
+      // Contact Form Submission Handler
+      function handleFormSubmit(event) {
+        event.preventDefault();
+        
+        const form = document.getElementById('contactForm');
+        const successAlert = document.getElementById('successAlert');
+
+        // Simulate successful submission
+        form.reset();
+        successAlert.classList.remove('hidden');
+
+        // Hide success alert after 6 seconds
+        setTimeout(() => {
+          successAlert.classList.add('hidden');
+        }, 6000);
+      }
+    </script>
+  </body>
+</html>
+
